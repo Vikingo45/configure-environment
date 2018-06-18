@@ -30,7 +30,7 @@ EOF
 virtualenv env
 source ./env/bin/activate
 pip3 install -r ./src/requirements.txt
-#python manage.py createsuperuser
+python ./src/manage.py createsuperuser
 
 
 # configure front-end
