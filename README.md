@@ -23,7 +23,7 @@ source ./env/bin/activate
 pip3 install -r ./src/requirements.txt
 ```
 
-After this, you need to create a super user in the database. Run the script ```manage.py``` and use your email and ```sportaadmin``` as the username and password, respectively.  
+After this, you need to create a superuser in the database. Run the script ```manage.py``` and use your email and ```sportaadmin``` as the username and password, respectively.  
 
 ```
 python manage.py createsuperuser
@@ -50,6 +50,8 @@ Now, inside the ```sportafrontend``` directory, execute ```npm install```.
 ## Running the script
 
 Setting up the Sporta development environment can be done effortlessly by running ```sporta.sh```. However, there are two things you need to do before. First, change the ports used by the application and webpack. This can be done by changing variables ```port``` and ```wpport``` in the script file. Second, you have to copy ```sporta.sh``` into the server. You can do that with the secure copy command - with an account in the server named ```user```, you can do ```scp ./sporta.sh user@35.171.87.95:~``` in your local machine to copy the script into your account's home directory in the server. Note that you may need to add your public RSA key in the server's ```authorized_keys``` file before doing this -, or alternatively, you can also clone this repository. Then, in the server you can run the script (```~/.sporta.sh```).  
+
+> **Tip**: If for any reason you already have a superuser, then you can skip superuser creation by pressing ```Ctrl + C``` when the script prompts you for your email account. The rest of the script will continue to execute.  
 
 
 
