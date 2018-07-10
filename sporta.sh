@@ -10,8 +10,8 @@ frontend=git@bitbucket.org:clubsporta/sportafrontend.git
 
 
 # configure back-end
-mkdir ~/sporta
-cd ./sporta
+mkdir -p ~/sporta
+cd ~/sporta
 git clone $backend
 cd ./sportabackend
 git checkout development
