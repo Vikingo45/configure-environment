@@ -7,6 +7,7 @@ wpport=5001   # change this too
 host=35.171.87.95
 backend=git@bitbucket.org:clubsporta/sportabackend.git
 frontend=git@bitbucket.org:clubsporta/sportafrontend.git
+feature="Athlete-Manage"   # must change every time before running this script
 
 
 # configure back-end
@@ -24,8 +25,11 @@ SPORTA_DBPASSWORD = 'sportapassword'
 MYEMAIL = 'sporta@clubsporta.com'
 MYEMAILPASSWORD = 'sportaadmin'
 
-SPORTADEV_DBUSER='sportadevuser'
-SPORTADEV_DBPASSWORD='sportadevpassword'
+SPORTADEV_DBUSER = 'sportadevuser'
+SPORTADEV_DBPASSWORD = 'sportadevpassword'
+
+SPORTADEVDB = 'sportadbdev'
+SPORTADB = 'sportaprod'
 EOF
 virtualenv env
 source ./env/bin/activate
@@ -38,6 +42,8 @@ cd ~/sporta
 git clone $frontend
 cd ./sportafrontend
 git checkout develop
+git flow init
+git flow feature start $feature
 cat > ./src/config.js << EOF
 require('babel-polyfill');
 
